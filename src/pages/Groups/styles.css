@@ -1,0 +1,37 @@
+.groups-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 5rem;
+}
+
+.groups-container {
+  display: flex;
+  
+  align-items: center;
+  justify-content: space-around;
+
+  height: 85%;
+}
+
+.match-buttons-box {
+  background-color: red;
+  width: 15%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.groups-list-box {
+  background-color: green;
+  width: 60%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.match-results-box {
+  background-color: blue;
+  width: 25%;
+  height: 100%;
+  padding: 1rem;
+}

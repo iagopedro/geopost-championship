@@ -5,9 +5,14 @@ import "./styles.css"
 
 function Landing() {
   return (
-    <div className="main-container">
-      <h1>Championship</h1>
-      <Link to="/groups">Start</Link>
+    <div className="main-container landing-container">
+      <div className="content">
+        <h1 className="landing-title">CHAMPIONSHIP</h1>
+        
+        <Link to="/groups">
+          <button className="landing-start_button">Start</button>
+        </Link>
+      </div>
     </div>
   )
 }
