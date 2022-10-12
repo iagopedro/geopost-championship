@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Group from "./components/Group";
 import MatchResults from "./components/MatchResults";
@@ -6,6 +6,21 @@ import MatchResults from "./components/MatchResults";
 import "./styles.css"
 
 function Groups() {
+  // Let's start this "React" thing...
+  const [teams, setTeams] = useState([])
+
+  useEffect(() => {
+    fetch("https://estagio.geopostenergy.com/WorldCup/GetAllTeams", {
+      headers: new Headers({
+        "git-user": "iagopedro",
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        setTeams(data.Result);
+      })
+  }, [])
+
   return (
     <div className="main-container">
 
@@ -26,6 +41,16 @@ function Groups() {
           <button className="third-matches-button">
             Start Third Round
           </button>
+
+          <ul>
+            {teams.map(team => {
+              return (
+                <li key={team.Token}>
+                  <span>{team.Name}</span>
+                </li>
+              )
+            })}
+          </ul>
 
         </aside>
 
