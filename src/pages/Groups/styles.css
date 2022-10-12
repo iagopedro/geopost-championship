@@ -1,3 +1,5 @@
+/* Header */
+
 .groups-header {
   display: flex;
   align-items: center;
@@ -5,6 +7,10 @@
 
   height: 5rem;
 }
+
+
+
+/* Container */
 
 .groups-container {
   display: flex;
@@ -15,23 +21,79 @@
   height: 85%;
 }
 
+
+
+/* Match Buttons */
+
 .match-buttons-box {
   background-color: red;
   width: 15%;
   height: 100%;
   padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.first-matches-button {
+  width: 10rem;
+  height: 3rem;
+}
+
+.second-matches-button {
+  width: 10rem;
+  height: 3rem;
+}
+
+.third-matches-button {
+  width: 10rem;
+  height: 3rem;
+}
+
+
+
+/* Groups List */
 
 .groups-list-box {
   background-color: green;
   width: 60%;
   height: 100%;
   padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.groups-list {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.group-item {
+  background-color: white;
+  width: 10rem;
+  height: 10rem;
+}
+
+
+
+/* Match Results */
 
 .match-results-box {
   background-color: blue;
   width: 25%;
   height: 100%;
   padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
