@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import Group from "./components/Group";
 import MatchResults from "./components/MatchResults";
@@ -6,20 +7,38 @@ import MatchResults from "./components/MatchResults";
 import "./styles.css"
 
 function Groups() {
-  // Let's start this "React" thing...
-  const [teams, setTeams] = useState([])
+  const [teams, setTeams] = useState([]);
+
+  const [groupA, setGroupA] = useState([]);
+  const [groupB, setGroupB] = useState([]);
+  const [groupC, setGroupC] = useState([]);
+  const [groupD, setGroupD] = useState([]);
+  const [groupE, setGroupE] = useState([]);
+  const [groupF, setGroupF] = useState([]);
+  const [groupG, setGroupG] = useState([]);
+  const [groupH, setGroupH] = useState([]);
+
+
 
   useEffect(() => {
-    fetch("https://estagio.geopostenergy.com/WorldCup/GetAllTeams", {
-      headers: new Headers({
-        "git-user": "iagopedro",
-      })
+    axios.get("https://estagio.geopostenergy.com/WorldCup/GetAllTeams", {
+      headers: {
+        "git-user": "iagopedro"
+      }
     })
-      .then(response => response.json())
-      .then(data => {
-        setTeams(data.Result);
-      })
+    .then(response => {
+      setGroupA(response.data.Result.slice(0,4))
+      setGroupB(response.data.Result.slice(4,8))
+      setGroupC(response.data.Result.slice(8,12))
+      setGroupD(response.data.Result.slice(12,16))
+      setGroupE(response.data.Result.slice(16,20))
+      setGroupF(response.data.Result.slice(20,24))
+      setGroupG(response.data.Result.slice(24,28))
+      setGroupH(response.data.Result.slice(28))
+    })
   }, [])
+
+  console.log(groupA)
 
   return (
     <div className="main-container">
@@ -42,16 +61,6 @@ function Groups() {
             Start Third Round
           </button>
 
-          <ul>
-            {teams.map(team => {
-              return (
-                <li key={team.Token}>
-                  <span>{team.Name}</span>
-                </li>
-              )
-            })}
-          </ul>
-
         </aside>
 
         <main className="groups-list-box">
@@ -60,50 +69,54 @@ function Groups() {
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-                <Group 
-                  team={
-                    {
-                      title: "Brazil",
-                      points: 0,
-                    }
-                  }
-                />
+              {
+                groupA.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
             
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupB.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupC.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupD.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
           </div>
@@ -114,50 +127,54 @@ function Groups() {
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupE.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupF.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupG.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
             <div className="group-item">
               <span className="group-title">Group A</span>
-              <Group 
-                team={
-                  {
-                    title: "Brazil",
-                    points: 0,
-                  }
-                }
-              />
+              {
+                groupH.map(team => {
+                  return (
+                    <li key={team.Token}>
+                      {team.Name}
+                    </li>
+                  )
+                })
+              }
             </div>
 
           </div>

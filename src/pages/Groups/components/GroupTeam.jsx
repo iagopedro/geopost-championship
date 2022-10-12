@@ -1,11 +1,10 @@
 import React from "react";
 
-function GroupTeam({ title, points }) {
+function GroupTeam({ title }) {
   return (
-    <tr>
-      <td>{title}</td>
-      <td>{points}</td>
-    </tr>
+    <div>
+      <span>{title}</span>
+    </div>
   );
 }
 

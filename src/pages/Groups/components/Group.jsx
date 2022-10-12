@@ -1,15 +1,11 @@
 import React from "react";
-import GroupTeam from "./GroupTeam";
 
-function Group({ team }) {
+function Group({ group }) {
   return (
-    <table>
-      <caption>Teams</caption>
-      <GroupTeam title={team.title} points={team.points}/>
-      <GroupTeam title={team.title} points={team.points}/>
-      <GroupTeam title={team.title} points={team.points}/>
-      <GroupTeam title={team.title} points={team.points}/>
-    </table>
+    <div>
+      <span>Teams</span>
+
+    </div>
   );
 }
 
