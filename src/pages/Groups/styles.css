@@ -120,10 +120,12 @@
 }
 
 .group-item {
-  background-color: rgb(33,33,33);
+  background-color: rgb(41, 41, 41);
   width: 10rem;
   height: 10rem;
   padding: 1rem;
+
+  border-radius: 5px;
 }
 
 li {

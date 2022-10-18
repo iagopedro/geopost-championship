@@ -15,6 +15,8 @@ function Groups() {
 
   const [matches, setMatches] = useState([]);
 
+  
+
   const [isFirstRoundFinished, setIsFirstRoundFinished] = useState(false)
   const [isSecondRoundFinished, setIsSecondRoundFinished] = useState(false)
   const [isThirdRoundFinished, setIsThirdRoundFinished] = useState(false)
@@ -42,12 +44,13 @@ function Groups() {
 
   }, [])
 
+
   function createMatch(team1, team2) {
     let match = {
       team1_name: team1.Name,
       team2_name: team2.Name,
-      team1_points: Math.floor(Math.random() * 5),
-      team2_points: Math.floor(Math.random() * 5),
+      team1_goals: Math.floor(Math.random() * 5),
+      team2_goals: Math.floor(Math.random() * 5),
     }
 
     return match;
@@ -171,6 +174,7 @@ function Groups() {
   }
 
 
+
   return (
     <div className="main-container">
 
@@ -214,7 +218,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group A</strong>
+              <h5 className="group-title">Group A</h5>
               {
                 groupA.map(team => {
                   return (
@@ -228,7 +232,7 @@ function Groups() {
             
             <div className="group-item">
 
-              <strong className="group-title">Group B</strong>
+              <h5 className="group-title">Group B</h5>
               {
                 groupB.map(team => {
                   return (
@@ -242,7 +246,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group C</strong>              {
+              <h5 className="group-title">Group C</h5>              {
                 groupC.map(team => {
                   return (
                     <li key={team.Token}>
@@ -255,7 +259,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group D</strong>
+              <h5 className="group-title">Group D</h5>
               {
                 groupD.map(team => {
                   return (
@@ -275,7 +279,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group E</strong>
+              <h5 className="group-title">Group E</h5>
               {
                 groupE.map(team => {
                   return (
@@ -289,7 +293,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group F</strong>
+              <h5 className="group-title">Group F</h5>
               {
                 groupF.map(team => {
                   return (
@@ -303,7 +307,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group G</strong>
+              <h5 className="group-title">Group G</h5>
               {
                 groupG.map(team => {
                   return (
@@ -317,7 +321,7 @@ function Groups() {
 
             <div className="group-item">
 
-              <strong className="group-title">Group H</strong>
+              <h5 className="group-title">Group H</h5>
               {
                 groupH.map(team => {
                   return (
@@ -336,7 +340,6 @@ function Groups() {
         <section className="match-results-box">
 
           <h3>Results</h3>
-
           {
             matches.map(match => {
               return (
@@ -345,14 +348,15 @@ function Groups() {
                   className="match-results"
                 >
                   <span>{match.team1_name}&nbsp;</span>
-                  <span>{match.team1_points}&nbsp;</span>
+                  <span>{match.team1_goals}&nbsp;</span>
                   X&nbsp;
-                  <span>{match.team2_points}&nbsp;</span>
+                  <span>{match.team2_goals}&nbsp;</span>
                   <span>{match.team2_name}</span>
                 </div>
               )
             })
           }
+          
         </section>
 
       </div>
